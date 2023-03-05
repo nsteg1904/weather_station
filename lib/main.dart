@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_station/screens/home/home.dart';
+import 'package:weather_station/screens/app/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,17 +11,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Weather Station',
-      theme: ThemeData(
-        iconTheme: const IconThemeData(
-          color: Colors.white70,
-          size: 45,
-        )
-      ),
-      home: const Home(),
+      home: ShowAppPage()
     );
   }
 }
+
 
 
