@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:weather_station/model/weather_forecast_data.dart';
 import 'package:weather_station/screens/app/home/forecast.dart';
+import 'package:weather_station/services/Database/forecast_database.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -7,8 +10,8 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        Expanded(
+      children: [
+        const Expanded(
           flex: 3,
           child: Center(
             child: Text('7°'),
@@ -16,7 +19,11 @@ class Home extends StatelessWidget {
         ),
         Expanded(
           flex: 1,
-          child: Forecast()
+          child: StreamProvider<List<WeatherForecastData>>.value(
+            initialData: const [],
+            value: WeatherForecastDatabaseService().latestFiveWeatherForecasts,
+            child: const Forecast()
+          )
         ),
       ],
     );
