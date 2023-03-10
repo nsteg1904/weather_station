@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 class NavBar extends StatelessWidget {
   final Function changeView;
@@ -8,17 +9,17 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      color: const Color(0xFF0b1f39),
+      // color: const Color(0xFF0b1f39),
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 15,
-          vertical: 20,
+          vertical: 15,
         ),
         child: GNav(
-          backgroundColor: const Color(0xFF0b1f39),
-          color: const Color(0xFF8c96a1),
-          activeColor: const Color(0xFFd97104),
+          // color: const Color(0xFF8c96a1),
+          // activeColor: const Color(0xFFd97104),
           tabBackgroundColor: const Color(0x406b6b6b),
+          // tabBorder: Border.all(),
           gap: 8,
           onTabChange: (index) {
             changeView(index);
@@ -30,8 +31,8 @@ class NavBar extends StatelessWidget {
               text: 'Home',
             ),
             GButton(
-              icon: Icons.pivot_table_chart,
-              text: '24 Stunden',
+              icon: WeatherIcons.day_sunny_overcast,
+              text: 'Vorhersage',
             ),
             GButton(
               icon: Icons.bar_chart,

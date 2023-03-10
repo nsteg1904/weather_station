@@ -18,22 +18,13 @@ class _ForecastState extends State<Forecast> {
 
     final weatherForecasts = Provider.of<List<WeatherForecastData>>(context).reversed.toList();
 
-    return Container(
-      decoration: const BoxDecoration(
-        color: Color(0xbf2b4261),
-      //   borderRadius: BorderRadius.circular(10.0),
-      ),
-      // margin: const EdgeInsets.all(10.0),
-      // padding: const EdgeInsets.all(2),
+    return ListView.builder(
+      itemCount: weatherForecasts.length,
+      // physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index){
+        return ForecastItem(fData: weatherForecasts[index]);
+      },
 
-      child: ListView.builder(
-        itemCount: weatherForecasts.length,
-        // physics: const NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index){
-          return ForecastItem(fData: weatherForecasts[index]);
-        },
-
-      ),
     );
   }
 

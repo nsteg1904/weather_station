@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_station/screens/app/last_24_hours/last_24_hours.dart';
+import 'package:weather_station/screens/app/weather_forecast/weather_forecast.dart';
 import 'package:weather_station/screens/app/navigation_bar.dart';
 import 'package:weather_station/screens/app/settings/settings.dart';
 import 'package:weather_station/screens/app/statistics/statistics.dart';
@@ -23,7 +23,7 @@ class _ShowAppPageState extends State<ShowAppPage> {
         setState(() => page = const Home());
         break;
       case 1:
-        setState(() => page = const Last24Hours());
+        setState(() => page = const WeatherForecast());
         break;
       case 2:
         setState(() => page = const Statistics());
