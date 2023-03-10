@@ -45,7 +45,7 @@ class _ShowAppPageState extends State<ShowAppPage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/morning.jpg'),
+            image: AssetImage('assets/backgrounds/sunny.png'),
             fit: BoxFit.cover,
           )
         ),
